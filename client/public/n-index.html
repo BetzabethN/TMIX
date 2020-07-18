@@ -143,16 +143,17 @@
                 type: 'GET',
                 url: 'https://api.twitch.tv/helix/games/top',
                 headers: {
-                    //'Authorization: Bearer XXXXXXXXXXXXX'
-                    'Client-ID': 'qnc7c6re04qm0486sw46e4ldlkhgyj'
+                    "Authorization": 'Bearer smnx8bhs44sb5ec2hzgjgnqz7xqkls',
+                    "Client-ID":'qnc7c6re04qm0486sw46e4ldlkhgyj'
                 },
                 dataType: 'json',
                 success: function(response) {
-                   console.log(data);
+                    console.log(response);
                     var content = '';
                     $.each(response.data, function(index, element) {
-                        content += 'id: ' + element.id + '<br />';
-                        content += 'name: ' + element.name + '<br />';
+                        //content += 'id: ' + element.id + '<br />';
+                        content += 'Rank: ' + (index+1) + '<br />';
+                        content += 'Name: ' + element.name + '<br />';
                     });
                     $('#output').html(content);
                 }
@@ -188,7 +189,7 @@
             <h1>Top Games</h1>
             
             <!-- output of the twitch api top games-->
-            <div class="output"></div>
+            <div id="output"></div>
         </div>
     </body>
 
