@@ -89,7 +89,7 @@
             }
 
             .content h1 {
-                text-align: center;
+                padding-left: 270px;
             }
         </style>
 
@@ -152,6 +152,7 @@
                     var content = '';
                     $.each(response.data, function(index, element) {
                         //content += 'id: ' + element.id + '<br />';
+                        content += '<img src='+element.box_art_url.replace("{width}", "150").replace("{height}", "220")+'>';
                         content += 'Rank: ' + (index+1) + '<br />';
                         content += 'Name: ' + element.name + '<br />';
                     });
@@ -159,6 +160,16 @@
                 }
             })
         </script>
+
+        <!--styling for the twitch top games output -->
+        <style>
+            #output {
+                padding-left: 270px;
+                display: grid;
+                grid-template-rows: repeat(5);
+                grid-template-columns: repeat(8, 1fr);
+            }
+        </style>
     </head>
 
     <body>
