@@ -175,16 +175,33 @@
                
 
             }
+            /* style for tmix logo */
+            .logo{
+				color:#663399;
+				font-size:25px;
+				font-family:verdana;
+				text-align:left;
+				margin-top:0px;
+				float:left;
+				margin:0px;
+				line-height:50px;
+				padding-left:9px;
+            }
         </style>
     </head>
 
-    <body style="background-color:rgb(12, 5, 78);">
+    <body style="background-color:rgb(20, 10, 109)";>
+        <div class="header">
+			<h1 class="logo">tmix</h1>
+			<form style:"float:right;display:inline-block;line-height:52px;padding-right:14px;">
+			</form>
+		</div>
         <!-- top navigation bar-->
         <div class="topnav">
             <a class="active" href="#"><i class="fa fa-fw fa-home"></i> Home</a> 
-            <a href="#"><i class="fa fa-fw fa-envelope"></i> Contact</a> 
-            <a href="#"><i class="fa fa-fw fa-user"></i> Login</a>
-            <a href="#"> My Account </a>
+            <a href="MirandaContact.html"><i class="fa fa-fw fa-envelope"></i> Contact</a> 
+            <a href="MirandaLogin.html"><i class="fa fa-fw fa-user"></i> Login</a>
+            <a href="MirandaAccount.html"> My Account </a>
             <div class="search-container">
                 <form action="/action_page.php">
                     <input type="text" placeholder="Search.." name="search">
@@ -192,6 +209,11 @@
                 </form>
             </div>
         </div>
+        <!-- footer-->
+        <footer>
+            <p>tmix</p>
+            <p><a href="mailto:hege@example.com">hege@example.com</a></p>
+          </footer>
 
         <!-- side navigation bar-->
         <div class="sidenav">
