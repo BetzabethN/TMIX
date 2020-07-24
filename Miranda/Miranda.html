@@ -110,7 +110,14 @@
                 padding: 8px 0;
             }
 
-            .sidenav a {
+            .sidenav h3 {
+                padding: 6px 8px 6px 16px;
+                text-decoration: none;
+                color: #2196f3;
+                display: block;
+            }
+
+            .sidenav #streamout {
                 padding: 6px 8px 6px 16px;
                 text-decoration: none;
                 font-size: 25px;
@@ -162,6 +169,25 @@
                     $('#output').html(content);
                 }
             })
+
+            //get top streams
+            $.ajax({
+                type: 'GET',
+                url: 'https://api.twitch.tv/helix/streams?first=10',
+                headers: {
+                    "Authorization": 'Bearer smnx8bhs44sb5ec2hzgjgnqz7xqkls',
+                    "Client-ID": 'qnc7c6re04qm0486sw46e4ldlkhgyj'
+                },
+                dataType: 'json',
+                success: function(tstreams) {
+                    var tstreamers ='';
+                    console.log(tstreams);
+                    $.each(tstreams.data, function(index, element) {
+                        tstreamers += element.user_name + '<br />';
+                    });
+                    $('#streamout').html(tstreamers);
+                }
+            })
         </script>
 
         <!--styling for the twitch top games output -->
@@ -195,10 +221,8 @@
 
         <!-- side navigation bar-->
         <div class="sidenav">
-            <a href="#1">Famous person 1</a>
-            <a href="#2">Famous person 2</a>
-            <a href="#3">Famous person 3</a>
-            <a href="#4">Famous person 4</a>
+            <h3>Top Live Streamers</h3>
+            <div id="streamout"></div>
         </div>
 
         <!-- top games (twitch api)-->
