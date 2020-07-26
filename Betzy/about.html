@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="eng">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>About Us</title>
+
+        <!--styling for site-->
+        <link rel="stylesheet" type="text/css" href="site.css">
+
+        <!--font for site-->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+        
+        <!--scripts for twitch API-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="twitchapi.js"></script>
+    </head>
+
+    <body>
+
+        <!--top nav bar-->
+        <header>
+            <h1 class="logo">TMIX</h1>
+
+            <ul class=nav>
+                <li class="navlink"><a href="index.html">Home</a></li>
+                
+                <li class="navlink"><a href="about.html">About</a></li>
+
+                <li class="navlink"><a href="contact.html">Contact Us</a></li>
+            </ul>
+            
+            <div class="burger">
+                <i class="fas fa-bars"></i>
+            </div>
+
+        </header>
+        <script src="topnav.js"></script>
+
+        <!--side bar-->
+        <div class="sidebar">
+            <h4>Top Live Streamers</h4>
+            <div id="streamout"></div>
+        </div>
+
+        <!--about us-->
+        <div class="content">
+            <h1>About Us</h1>
+
+            <p>This is a project for CodeLabs Summer Internship. This website is based on the project
+                 idea of our mentor Jacob Cuomo.</p>
+            
+            <p>The purpose of this website is to put all the streaming services into
+                 one website. So instead of having to go to multiples site like Twitch, Youtube, or DLive, you could 
+                 find all your favorite streamers in one website.</p>
+
+            <p>We made this website using HTMl, CSS, Javascript, and the Twitch APi.</p>
+        </div>
+
+
+        <!--footer-->
+        <footer class="footer-distributed">
+
+            <div class="center">
+                <h3>TMIX</h3>
+
+                <p class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="contact.html">Contact Us</a>
+                </p>
+
+                <p class="footer-credits">Designed by Elika Gowda, Miranda Liu, and Betzabeth Narvaez</p>
+            </div>
+
+        </footer>
+    </body>
+</html>

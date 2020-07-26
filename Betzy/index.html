@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="eng">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>TMIX Homepage</title>
+
+        <!--styling for site-->
+        <link rel="stylesheet" type="text/css" href="site.css">
+
+        <!--font for site-->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+        
+        <!--scripts for twitch API-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="twitchapi.js"></script>
+    </head>
+
+    <body>
+        
+        <!--top nav bar-->
+        <header>
+            <h1 class="logo">TMIX</h1>
+
+            <ul class=nav>
+                <li class="navlink"><a href="index.html">Home</a></li>
+                
+                <li class="navlink"><a href="about.html">About</a></li>
+
+                <li class="navlink"><a href="contact.html">Contact Us</a></li>
+            </ul>
+            
+            <div class="burger">
+                <i class="fas fa-bars"></i>
+            </div>
+
+        </header>
+        <script src="topnav.js"></script>
+
+        <!--side bar-->
+        <div class="sidebar">
+            <h4>Top Live Streamers</h4>
+            <div id="streamout"></div>
+        </div>
+
+        <!--top games from twitch api-->
+        <div class="content">
+            <h1>Top Games</h1>
+
+            <!--output of twitch api top games-->
+            <div id="output"></div>
+        </div>
+
+
+        <!--footer-->
+        <footer class="footer-distributed">
+
+            <div class="center">
+                <h3>TMIX</h3>
+
+                <p class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="contact.html">Contact Us</a>
+                </p>
+
+                <p class="footer-credits">Designed by Elika Gowda, Miranda Liu, and Betzabeth Narvaez</p>
+            </div>
+
+        </footer>
+    </body>
+</html>
