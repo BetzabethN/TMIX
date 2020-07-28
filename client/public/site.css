@@ -5,6 +5,22 @@ body {
     background-color: #ccc;
 }
 
+#page-container {
+    position: relative;
+    min-height: 100vh;
+}
+
+#content-wrap {
+    padding-bottom: 13.5rem;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 11.5rem;
+}
+
 /* top nav */
 
 header {
@@ -130,11 +146,6 @@ header {
 
 
 /* footer */
-footer {
-    bottom: 0px;
-   
-}
-
 footer h3 {
     color: #ccc;
 }
