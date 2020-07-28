@@ -13,7 +13,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    background: #232323;
+    background: #02064a;
     color: #ccc;
 }
 
@@ -55,7 +55,7 @@ header {
 
     .nav {
         margin: 0;
-        background: #343434;
+        background: #02075d;
         position: absolute;
         right: -100%;
         top: 70px;
@@ -84,7 +84,7 @@ header {
     z-index: 1;
     top: 80px;
     left: 10px;
-    background: #232323;
+    background: #02064a;
     overflow: hidden;
     padding: 8px 0;
 }
@@ -116,7 +116,7 @@ header {
 }
 
 
-/* content */
+/* content for index page */
 .content {
     margin-left: 250px;
 }
@@ -140,7 +140,7 @@ footer h3 {
 }
 
 .footer-distributed{
-    background-color: #232323;
+    background-color: #02064a;
     box-sizing: border-box;
     width: 100%;
     text-align: center;

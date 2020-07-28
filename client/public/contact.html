@@ -5,68 +5,59 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <title>Contact Us</title>
-
         <!--styling for site-->
         <link rel="stylesheet" type="text/css" href="site.css">
 
         <!--font for site-->
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
-        
-        <!--scripts for twitch API-->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script src="twitchapi.js"></script>
+        <link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
     </head>
 
     <body>
+        <div id="page-container">
+            <div id="content-wrap">
 
-        <!--top nav bar-->
-        <header>
-            <h1 class="logo">TMIX</h1>
+                <!--top nav bar-->
+                <header>
+                    <h1 class="logo">TMIX</h1>
 
-            <ul class=nav>
-                <li class="navlink"><a href="index.html">Home</a></li>
-                
-                <li class="navlink"><a href="about.html">About</a></li>
+                    <ul class="nav">
+                        <li class="navlink"><a href="index.html">Home</a></li>
 
-                <li class="navlink"><a href="contact.html">Contact Us</a></li>
-            </ul>
-            
-            <div class="burger">
-                <i class="fas fa-bars"></i>
+                        <li class="navlink"><a href="contact.html">Contact</a></li>
+
+                        <li class="navlink"><a href="about.html">About</a></li>
+
+                        <li class="navlink"><a href="login.html">Login</a></li>
+                    </ul>
+
+                    <div class="burger">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                </header>
+                <script src="topnav.js"></script>
+
+               <!--contact form-->
+               <div>
+                   <h1>Contact Us</h1>
+
+                   <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScU8NYlhP7pEVkgCr9lmrjvDIeFJT-obT1yN0hdmR2e58so_w/viewform?embedded=true" width="640" height="709" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+               </div>
             </div>
 
-        </header>
-        <script src="topnav.js"></script>
-
-        <!--side bar-->
-        <div class="sidebar">
-            <h4>Top Live Streamers</h4>
-            <div id="streamout"></div>
-        </div>
-
-        <!--contact form-->
-        <div class="content">
-            <h1>Contact Us</h1>
-
-            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScU8NYlhP7pEVkgCr9lmrjvDIeFJT-obT1yN0hdmR2e58so_w/viewform?embedded=true" width="640" height="709" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
-        </div>
-
-
-        <!--footer-->
-        <footer class="footer-distributed">
-
-            <div class="center">
+            <!--footer-->
+            <footer class="footer-distributed">
                 <h3>TMIX</h3>
 
                 <p class="footer-links">
                     <a href="index.html">Home</a>
+                    <a href="contact.html">Contact</a>
                     <a href="about.html">About</a>
-                    <a href="contact.html">Contact Us</a>
+                    <a href="login.html">Login</a>
+                    <a href="termsncond.html">Terms & Conditions</a>
                 </p>
 
                 <p class="footer-credits">Designed by Elika Gowda, Miranda Liu, and Betzabeth Narvaez</p>
-            </div>
-
-        </footer>
+            </footer>
+        </div>
     </body>
 </html>
