@@ -8,9 +8,10 @@ $.ajax({
     },
     dataType: 'json',
     success: function(tgames) {
+        console.log(tgames)
         var content='';
         $.each(tgames.data, function(index, element) {
-            content += '<img src='+element.box_art_url.replace("{width}", "150").replace("{height}", "220")+'>';
+            content += '<a href="https://www.twitch.tv/directory/game/' + element.name.replace(" ","%20") + '" target="_blank"><img src=' + element.box_art_url.replace("{width}", "150").replace("{height}", "220")+'></a>';
             content += 'Rank: ' + (index+1) + '<br />';
             content += 'Name: ' + element.name + '<br />';
         });
@@ -31,7 +32,7 @@ $.ajax({
         var tstreamers ='';
         console.log(tstreams);
         $.each(tstreams.data, function(index, element) {
-            tstreamers += element.user_name + '<br />';
+            tstreamers += '<a href="https://www.twitch.tv/' + element.user_name + '" target="_blank">'+element.user_name + '</a><br />';
         });
         $('#streamout').html(tstreamers);
     }
