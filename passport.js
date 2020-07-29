@@ -1,57 +1,76 @@
-var LocalStrategy = require('passport-local').Strategy;
-var User = require('../models/user');
-module.exports = function(passport){
-    passport.serializeUser(function(user, done) {
-        done(null, user.id);
-    });
+const passport = require('passport');
+const User = require('../models/User');
+const bcrypt = require("bcryptjs");
 
-    passport.deserializeUser(function(id, done) {
-        User.findById(id, function(err, user) {
-            done(err, user);
-        });
-    });
+const LocalStrategy = require('passport-local').Strategy;
+
+/**
+ * Called when user is added into the session.
+ * 
+ * It stores only the unique id of the user into the session.
+ * 
+ */
+passport.serializeUser(function (user, done) {
+    return done(null, user.id);
+})
+
+/**
+ * Called when we need the values of the 
+ * 
+ * It takes the id into the session then finds the user in the database
+ * and returns it.
+ * 
+ * You can store whole user data into the session to avoid calling database for user.
+ */
+passport.deserializeUser(async function (id, done) {
+    try {
+        const userObj = await User.findById(id, '-password');
+        return done(null, userObj);
+    } catch (error) {
+        done(error);
+    }
+})
 
 
-    passport.use('register',new LocalStrategy({
-        usernameField: 'email',
-        passwordField: 'password',
-        passReqToCallback:true
-    },
-        function(req,email, password, done) {
-            User.findOne({ email: email }, function(err, user) {
-            if (err) { return done(err); }
-            if (user) {
-                return done(null, false, req.flash('registerMessage','Email is already taken...' ));
-            }else{
-                var newUser = new User();
-                newUser.email = email;
-                newUser.password = newUser.generateHash(password);
-                newUser.save(function(err){
-                if(err) throw err;
-                return done(null,newUser);
-            });
-            }
-            });
-    }));
+/**
+ * Passport Local Strategey
+ * 
+ * 'passReqToCallback' is set to true to access req object and to set some flash messages
+ * in case of any errors.
+ */
+passport.use(new LocalStrategy({
+    passReqToCallback: true,
+    usernameField: 'email', // the desired username field you have defaults to 'username'
+    passwordField: 'password', // the desired password field you have defaults to 'password'
+}, async function (req, email, password, done) {
 
-    passport.use('login',new LocalStrategy({
-        usernameField: 'email',
-        passwordField: 'password',
-        passReqToCallback:true
-    },
-        function(req,email, password, done) {
-            User.findOne({ email: email }, function(err, user) {
-            if (err) { return done(err); }
-            if (!user) {
-                return done(null, false, req.flash('loginMessage','Incorrect username.' ));
-            }
-            if (!user.validPassword(password)) {
-                return done(null, false,  req.flash('loginMessage','Incorrect password !' ));
-            }
-            return done(null, user);
-            });
+    /**
+     * Find User
+     */
+    const userObj = await User.findOne({ email: email });
+    
+    if (userObj && userObj._id) {
+        
+        /**
+         * Match Password
+         */
+        const match = await bcrypt.compare(password, userObj.password);
+        
+        if (match) {
+
+            /** All Set */
+            return done(null, {
+                id: userObj._id
+            })
         }
-    ));
+    }
+
+    /**
+     * Set error message in flash and call the callback.
+     */
+    req.flash('error', 'Wrong Credentials');
+    return done(null, false);
+}));
 
 
-};
+module.exports = passport;
