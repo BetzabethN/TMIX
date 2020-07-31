@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
-    "twitch": "^4.1.3"
+    "twitch": "^4.1.3",
+    "youtube-streamer": "^2.0.1"
   }
 }
