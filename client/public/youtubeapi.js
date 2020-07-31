@@ -19,7 +19,7 @@ var maxVideos = 5;
       regionCode: 'IN',
       key: 'AIzaSyCqxjWmGeGwXMCySbk4soaO6T1kGrS2a1A'},
       function(data){
-        var output;
+        var output2;
         $.each(data.items, function(i, item){
           console.log(item);
           videTitle = item.snippet.title;
@@ -29,14 +29,14 @@ var maxVideos = 5;
                 videoDate = item.snippet.publishedAt;
                 Catagoryid = item.snippet.categoryId;
                 cID = item.snippet.channelId;
-          output = '<div class="maindiv"><div>' +
+          output2 = '<div class="maindiv"><div>' +
                         '<a data-fancybox-type="iframe" class="fancyboxIframe" href="watch.php?v=' + vidId + '" target="_blank" ><img src="' + thumb + '" class="img-responsive thumbnail" ></a>' +
                         '</div>' +
                         '<div class="input-group col-md-6">' +
                             '<h3 class="Vtitle"><a data-fancybox-type="iframe" class="fancyboxIframe" href="watch.php?v=' + vidId + '" target="_blank">' + videTitle + '</a></h3>'+
                         '</div><div  id="cTitle"><a href="https://www.youtube.com/channel/'+cID+'" target="_blank">'+channelTitle+'</a></div></div>' +
                     '<div class="clearfix"></div>';
-          $('#trending').append(output);
+          $('#trending').append(output2);
         })
 
       }

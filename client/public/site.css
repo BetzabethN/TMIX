@@ -2,7 +2,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #ccc;
+    background-color: rgb(208, 220, 235);
 }
 
 #page-container {
@@ -141,6 +141,13 @@ header {
     display: grid;
     grid-template-columns: repeat(8, 1fr)
 
+}
+.output2 {
+    margin-left: 250px;
+}
+#trending {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr)
 }
 
 
