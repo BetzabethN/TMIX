@@ -1,10 +1,10 @@
-let params = {
+/**let params = {
   clientId: '561315511368-a43kqrt4nkgrcl2bns67s0n8fgni004e.apps.googleusercontent.com',
   clientSecret: '5nip2swdJDzm3Z2_C_HxfP-0',
   redirectUrl: 'http://localhost',
   key: 'AIzaSyCqxjWmGeGwXMCySbk4soaO6T1kGrS2a1A',
   scopes: 'https://www.googleapis.com/auth/youtube.readonly https://www.googleapis.com/auth/youtube https://www.googleapis.com/auth/youtube.force-ssl'
-};
+}; 
 
 let youtube = new youtubeApi(params);
 
@@ -41,5 +41,6 @@ var maxVideos = 5;
 
       }
     );
-}); 
+}); **/
+
 
