@@ -14,11 +14,6 @@
         <!--scripts for twitch API-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="twitchapi.js"></script>
-
-        <!-- scripts for youtube API-->
-        <script src="youtubeapi.js"></script>
-
-        <!--DON't forget to load javascript files here-->
     </head>
 
     <body>
@@ -60,7 +55,7 @@
                 </div>
 
                 <!-- Trending videos for YOUTUBE -->
-               <div class ="output2">
+               div class ="output2">
                     <h1>Trending Videos on Youtube</h1>
                 
                     <div id="trending"></div> 

@@ -154,7 +154,9 @@ header {
     display: grid;
     grid-template-columns: repeat(8, 1fr)
 }
-
+#outputVideos{
+    width: 150px;
+}
 
 
 /* footer */
@@ -191,6 +193,16 @@ footer h3 {
 	font-size: 14px;
 	font-weight: normal;
 	margin: 0;
+}
+
+.maindiv{
+    width: 50%;
+
+}
+
+.img-responsive .thumbnail{
+    width: 50%;
+
 }
 
 @media(max-width:1300px) {

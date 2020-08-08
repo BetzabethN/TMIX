@@ -1,4 +1,5 @@
-/**let params = {
+//this is in javascript, in a file called youtubeapi.js
+let params = {
   clientId: '561315511368-a43kqrt4nkgrcl2bns67s0n8fgni004e.apps.googleusercontent.com',
   clientSecret: '5nip2swdJDzm3Z2_C_HxfP-0',
   redirectUrl: 'http://localhost',
@@ -6,9 +7,9 @@
   scopes: 'https://www.googleapis.com/auth/youtube.readonly https://www.googleapis.com/auth/youtube https://www.googleapis.com/auth/youtube.force-ssl'
 }; 
 
-let youtube = new youtubeApi(params);**/
+let youtube = new youtubeApi(params);
 
-var maxVideos = 10;
+var maxVideos = 5;
    $(document).ready(function(){
   $.get(
     "https://www.googleapis.com/youtube/v3/videos",{
@@ -16,7 +17,7 @@ var maxVideos = 10;
       chart: 'mostPopular',
       kind: 'youtube#videoListResponse',
       maxResults: maxVideos,
-      regionCode: 'US',
+      regionCode: 'IN',
       key: 'AIzaSyCqxjWmGeGwXMCySbk4soaO6T1kGrS2a1A'},
       function(data){
         var output2;
@@ -29,12 +30,11 @@ var maxVideos = 10;
                 videoDate = item.snippet.publishedAt;
                 Catagoryid = item.snippet.categoryId;
                 cID = item.snippet.channelId;
-                id = item.id;
-          output2 = '<div id="outputVideos"><div>' +
-                        '<a data-fancybox-type="iframe" class="fancyboxIframe" href="https://www.youtube.com/watch?v=' + id + '" target="_blank" ><img src="' + thumb + '" class="img-responsive thumbnail" ></a>' +
+          output2 = '<div class="maindiv"><div>' +
+                        '<a data-fancybox-type="iframe" class="fancyboxIframe" href="watch.php?v=' + vidId + '" target="_blank" ><img src="' + thumb + '" class="img-responsive thumbnail" ></a>' +
                         '</div>' +
                         '<div class="input-group col-md-6">' +
-                            '<h3 class="Vtitle"><a data-fancybox-type="iframe" class="fancyboxIframe" href="https://www.youtube.com/watch?v=' + id + '" target="_blank">' + videTitle + '</a></h3>'+
+                            '<h3 class="Vtitle"><a data-fancybox-type="iframe" class="fancyboxIframe" href="watch.php?v=' + vidId + '" target="_blank">' + videTitle + '</a></h3>'+
                         '</div><div  id="cTitle"><a href="https://www.youtube.com/channel/'+cID+'" target="_blank">'+channelTitle+'</a></div></div>' +
                     '<div class="clearfix"></div>';
           $('#trending').append(output2);
@@ -44,4 +44,10 @@ var maxVideos = 10;
     );
 });
 
-
+//this is in html, in the index.html file inside the body, comes right after code for twitch output 
+<!-- Trending videos for YOUTUBE -->
+               <div class ="output2">
+                    <h1>Trending Videos on Youtube</h1>
+                
+                    <div id="trending"></div> 
+                </div>
